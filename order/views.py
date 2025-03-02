@@ -15,7 +15,7 @@ def signup(request):
             # Log the user in after sign up
             login(request, user)
             messages.success(request, "Account created successfully!")
-            return redirect('menu')  # redirect to the menu or another page you want
+            return redirect('menu')
         else:
             messages.error(request, "There was an error with your registration.")
     else:
