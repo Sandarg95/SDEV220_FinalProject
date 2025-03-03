@@ -1,0 +1,26 @@
+{% extends 'order/base_admin.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Create an Order or Click on Details to Manage Foods</h2>
+        <form method="POST" action="{% url 'place_order_admin' %}" class="p-4 border rounded shadow-sm">
+            {% csrf_token %}
+            <div class="form-group">
+                {% for food in food_items %}
+                    <div class="form-check d-flex justify-content-between align-items-center">
+                        <div>
+                            <input type="checkbox" class="form-check-input" name="food_items" value="{{ food.id }}" id="food_{{ food.id }}">
+                            <label class="form-check-label" for="food_{{ food.id }}">
+                                {{ food.name }} - <strong>${{ food.price }}</strong>
+                            </label>
+                        </div>
+                        <a href="{% url 'update_food_item' food.id %}">Details/Manage</a>
+
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-4">Place Order</button>
+        </form>
+    </div>
+{% endblock %}

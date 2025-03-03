@@ -1,0 +1,114 @@
+{% extends 'order/base_admin.html' %}
+
+{% load custom_filters %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Order Status Summary</h2>
+
+    <!-- Display the pie chart (Today's Orders) -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <h3>Today's Orders</h3>
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ plot_url_today }}" alt="Order Status Chart for Today" class="img-fluid">
+            </div>
+            <div class="mt-4">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Status</th>
+                            <th>Number of Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for status, count in status_summary_today.items %}
+                            <tr>
+                                <td>{{ status }}</td>
+                                <td>{{ count }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="2" class="text-center">No orders today.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Display the bar chart (All Orders) -->
+        <div class="col-md-6">
+            <h3>All Orders</h3>
+            <div class="image-container">
+                <img src="data:image/png;base64,{{ plot_url_all }}" alt="Order Status Chart (All Orders)" class="img-fluid">
+            </div>
+            <div class="mt-4">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Status</th>
+                            <th>Number of Orders</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for status, count in status_summary_all.items %}
+                            <tr>
+                                <td>{{ status }}</td>
+                                <td>{{ count }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="2" class="text-center">No orders found.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .image-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+    }
+
+    .image-container p {
+        margin-top: 10px;
+        color: #333;
+        font-size: 1.1rem;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .container {
+        margin-top: 30px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        color: #333;
+        font-weight: bold;
+    }
+
+    table {
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+{% endblock %}
