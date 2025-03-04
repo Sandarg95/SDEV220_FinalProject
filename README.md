@@ -1,4 +1,4 @@
-# OrderFood - Admin View
+# OrderFood
 
 OrderFood is a Django-based web application that allows customers to place food orders and restaurant owners to manage them. This repository focuses on the Admin View (see [Testing](#testing)), providing insights into order statuses and summaries.
 
