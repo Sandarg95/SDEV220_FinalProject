@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h2>Update Food Item</h2>
+    <h2>Add Food Item</h2>
 
     <form method="POST">
         {% csrf_token %}
@@ -22,7 +22,7 @@
             <label class="form-check-label" for="available">Available</label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Add</button>
         <a href="{% url 'menu_admin' %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>

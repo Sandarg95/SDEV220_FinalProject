@@ -17,6 +17,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('signup/', views.signup, name='signup'),
     path('summary/', views.summary, name='summary'),
+     path('add_food_item/', views.add_food_item, name='add_food_item'),
     path('order/update_order_status/<int:order_id>/', views.update_order_status, name='update_order_status'),
     path('order/update_food_item/<int:food_id>/', views.update_food_item, name='update_food_item'),
 

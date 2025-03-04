@@ -22,7 +22,7 @@ def is_admin(user):
 @user_passes_test(is_admin)
 @login_required
 def menu_admin(request):
-    food_items = FoodItem.objects.filter(available=True)  
+    food_items = FoodItem.objects.filter()  
     return render(request, 'order/menu_admin.html', {'food_items': food_items})
 
 def signup(request):
@@ -140,7 +140,21 @@ def update_food_item(request, food_id):
 
         messages.success(request, f"{food_item.name} has been updated successfully.")
         return redirect('menu_admin')  
- 
+
+@login_required
+@user_passes_test(is_admin)   
+def add_food_item(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        price = request.POST.get('price')
+        available = request.POST.get('available') == 'on'
+        FoodItem.objects.create(name=name, price=price, available=available)
+        messages.success(request, f"{name} has been added successfully.")
+        return redirect(menu_admin)  # Redirect to the food list or another page
+
+    return render(request, 'order/add_food_item.html')
+    
+    
 @login_required
 @user_passes_test(is_admin)   
 def summary(request):
