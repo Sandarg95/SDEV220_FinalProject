@@ -24,7 +24,7 @@ OrderFood is a Django-based web application that allows customers to place food 
 
 To test the full functionality:
 - Sign up with any account to test the customer view.
-- Log in with this admin account to see the Admin View 'http://127.0.0.1:8000/admin/`:
+- Log in with this admin account to see the Admin View 'http://127.0.0.1:8000/login/`:
   - **Username:** orderfood
   - **Password:** orderfood1234
 
