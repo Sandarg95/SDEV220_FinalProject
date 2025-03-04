@@ -84,5 +84,5 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For questions or suggestions, reach out to [Daniel Santana](https://github.com/Sandarg95) or [Coleman Ransford](https://github.com/Heavensdoorlmao) .
+For questions or suggestions, reach out to [Daniel Santana](https://github.com/Sandarg95) or [Coleman Matthew Dean Ransford](https://github.com/Heavensdoorlmao) .
 
