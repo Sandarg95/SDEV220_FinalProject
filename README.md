@@ -24,9 +24,7 @@ OrderFood is a Django-based web application that allows customers to place food 
 
 To test the full functionality:
 - Sign up with any account to test the customer view.
-- Log in with this admin account to see the Admin View 'http://127.0.0.1:8000/admin/`:
-  - **Username:** orderfood
-  - **Password:** orderfood1234
+- Log in with the admin account 'http://127.0.0.1:8000/menu_admin/' to see the Admin View built by us.
 
 ## Installation
 
@@ -64,10 +62,8 @@ python manage.py runserver
 ## Usage
 
 1. Log in to the Django admin panel at `http://127.0.0.1:8000/admin/`
-2. Log in with this admin account to see the Admin View at 'http://127.0.0.1:8000/login/' :
-  - **Username:** orderfood
-  - **Password:** orderfood1234.
-3. Navigate to the "Orders" section to manage orders.
+2. Log in with the admin account bilt by us to see the Admin View at '[http://127.0.0.1:8000/login/](http://127.0.0.1:8000/menu_admin/)' 
+3. Navigate to create and update orders, edit foods, and to view summary on 'menu-admin'.
 4. Visit `http://127.0.0.1:8000/summary/` to view order statistics and charts.
 
 ## Contributing
@@ -84,5 +80,5 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For questions or suggestions, reach out to [Daniel Santana](https://github.com/Sandarg95) or [Coleman Ransford](https://github.com/Heavensdoorlmao) .
+For questions or suggestions, reach out to [Daniel Santana](https://github.com/Sandarg95) or [Coleman Matthew Dean Ransford](https://github.com/Heavensdoorlmao) .
 
